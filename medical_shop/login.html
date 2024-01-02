@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Medical shop management system</h1>
+      </header>
+    
+      <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#service">Services</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+      </nav>
+    <h1 id="login-head">Login </h1>
+    <form action="" class="login-form">
+    <label for="">Username</label>
+    <input type="text" id="username" > <br>
+    <div>
+    <label for="">Password</label>
+    <input type="password" id="pass"> <br>
+
+    <input type="submit" id="btn" value="login">
+</div>
+</form>
+</body>
+</html>
