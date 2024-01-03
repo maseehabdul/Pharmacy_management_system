@@ -14,8 +14,8 @@ def index(request):
 def login(requests):
     if requests.method == 'POST':
         username = request.POST['username']
-        password = request.POST['password']
-        
+        password = request.POST['password'];
+
 
 
     # return render(requests,'login.html')
