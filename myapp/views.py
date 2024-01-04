@@ -12,10 +12,11 @@ from requests import request
 def index(request):
     return render(request,'index.html')
 def login(requests):
-    if requests.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password'];
+      return render(requests,'login.html')
+    # if requests.method == 'POST':
+    #     username = request.POST['username']
+    #     password = request.POST['password'];
 
 
 
-    # return render(requests,'login.html')
+  
