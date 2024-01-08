@@ -15,20 +15,25 @@
     
       <nav>
         <a href="index">Home</a>
-        <a href="#about">About</a>
+        <a href="../medical_shop/index.html/#about">About</a>
         <a href="#service">Services</a>
         <a href="#">Contact</a>
    
       </nav>
     <h1 id="login-head">Login </h1>
+<<<<<<< HEAD
     <form action="" class="login-form">
       {% csrf_token %}
       
+=======
+    <form action="" method='POST' class="login-form">
+      {% csrf_token %}
+>>>>>>> caf10ed3883baebce3e9ef8cff72ba16503ef17b
     <label for="">Username</label>
-    <input type="text" id="username" > <br>
+    <input type="text" name="username" id="username" > <br>
     <div>
     <label for="">Password</label>
-    <input type="password" id="pass"> <br>
+    <input type="password" name="password" id="pass"> <br>
 
     <input type="submit" id="btn" value="login">
 </div>
