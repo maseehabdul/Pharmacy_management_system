@@ -22,6 +22,8 @@
       </nav>
     <h1 id="login-head">Login </h1>
     <form action="" class="login-form">
+      {% csrf_token %}
+      
     <label for="">Username</label>
     <input type="text" id="username" > <br>
     <div>
