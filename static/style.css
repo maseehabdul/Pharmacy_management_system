@@ -51,7 +51,7 @@ body {
   /* login css */
 
   .login-form{
-padding: 2rem;
+   padding: 2rem;
     text-align: center;
     align-items: center;
     margin: 0 auto;
@@ -61,7 +61,12 @@ padding: 2rem;
    box-shadow: 2px 2px lightblue;
     width: 50%;
     height: 200px;
+    margin-top: 1rem;
+    width: 90%;
+    height: 100%;
+
   }
+  
   label{
     color: #000080;
   }
