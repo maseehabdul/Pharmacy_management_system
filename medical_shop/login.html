@@ -7,7 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="{% static '/style.css' %}">
 </head>
-<body>
+<body class="login-bg">
 
     
       <nav>
@@ -17,13 +17,11 @@
         <a href="#">Contact</a>
    
       </nav>
-    <h1 id="login-head">Login </h1>
+    <h1 id="login-head">Admin Login </h1>
 
     <form action="" class="login-form">
       {% csrf_token %}
-      
-    <form action="" method='POST' class="login-form">
-      {% csrf_token %}
+
 
     <label for="">Username</label>
     <input type="text" name="username" id="username" > <br>

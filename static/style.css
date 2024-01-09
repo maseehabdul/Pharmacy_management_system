@@ -29,16 +29,17 @@ body {
   nav a {
     /* float: center; */
     display: block;
-    color: #000080;
+    color: #1b263b;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
 
   nav a:hover {
-    background-color: white;
-    border-radius: 10px;
-    color: red;
+  
+  text-decoration: underline;
+    color: #ffbe0b;
+    scroll-behavior: smooth;
   }
 
   .content{
@@ -49,6 +50,10 @@ body {
   }
 
   /* login css */
+
+  .login-bg{
+    background-color: #000000;
+  }
 
   .login-form{
    padding: 2rem;
@@ -62,25 +67,35 @@ body {
     width: 50%;
     height: 200px;
     margin-top: 1rem;
-    width: 90%;
-    height: 100%;
+    width: 50%;
+    height: 10rem;
 
   }
-  
+
   label{
-    color: #000080;
+    color: #001d3d;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+    font-weight:bold;
   }
   #username{
-padding: 0.2rem;
+padding: 0.3rem;
+width: 25%;
+border-radius: 8px;
+border: black solid 1px;
 
   }
   #pass{
-    padding: 0.2rem;
+    padding: 0.3rem;
     margin-top: 2rem;
+    width: 25%;
+    border-radius: 8px;
+    border: black solid 1px;
   }
   #login-head{
-
-font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+color: red;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 text-align: center;
   }
   #btn{
