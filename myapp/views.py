@@ -10,7 +10,7 @@ from django.http import HttpResponse
 def index(request):
     return render(request,'index.html')
 
-def login(requests):
+def login(request):
     if request.method == 'POST':
        username = request.POST['username']
        password = request.POST['password']
@@ -20,10 +20,10 @@ def login(requests):
            auth.login(request,user)
            return redirect('/')
        else:
-           messages.info("Usernameor password is invalid!!")
+           messages.info(request,'Username or password is invalid!!')
            return redirect("login")
     else:
-        return render(requests,'login.html')
+        return render(request,'login.html')
 
      
 
