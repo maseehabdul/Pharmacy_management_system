@@ -12,8 +12,7 @@ from requests import request
 def index(request):
     return render(request,'index.html')
 def login(requests):
-<<<<<<< HEAD
-      return render(requests,'login.html')
+        return render(requests,'login.html')
     # if requests.method == 'POST':
     #     username = request.POST['username']
     #     password = request.POST['password'];
@@ -21,12 +20,8 @@ def login(requests):
 
 
   
-=======
-    if requests.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
 
 
 
     # return render(requests,'login.html')
->>>>>>> refs/remotes/origin/main
+

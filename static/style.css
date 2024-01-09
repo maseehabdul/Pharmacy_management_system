@@ -13,14 +13,14 @@ body {
   }
 
   header {
-    background-color: #000080 ;
+    background-color: #023047 ;
     color: white;
     padding: 10px;
     text-align: center;
   }
 
   nav {
-    background-color: lightblue;
+    background-color: #219ebc;
     overflow: hidden;
     display: flex;
     justify-content: center; 
@@ -51,14 +51,16 @@ body {
   /* login css */
 
   .login-form{
-
+padding: 2rem;
     text-align: center;
     align-items: center;
-    margin-top: 1rem;
-/*     border: #000080 solid 2px; */
-/*     border-radius: 4px; */
-    width: 100%;
-    height: 100%;
+    margin: 0 auto;
+   background-color: white;
+   border:#cdb4db 2.5px solid;
+   border-radius: 20px;
+   box-shadow: 2px 2px lightblue;
+    width: 50%;
+    height: 200px;
   }
   label{
     color: #000080;
@@ -87,7 +89,9 @@ font-family: 'Courier New', Courier, monospace;  }
 
 
 /* footer */
-
+footer{
+  background-color: rgb(219, 12, 12);
+}
 
 
 
