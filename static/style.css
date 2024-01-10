@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Lemon&family=Roboto:ital,wght@0,100;0,300;1,100&family=Salsa&display=swap');
+
 html{
   scroll-behavior: smooth;
 }
@@ -76,35 +78,36 @@ body {
     font-weight:bold;
   }
   #username{
-padding: 0.3rem;
+padding: 0.4rem;
 width: 25%;
 border-radius: 8px;
 border: black solid 1px;
 
   }
   #pass{
-    padding: 0.3rem;
+    padding: 0.4rem;
     margin-top: 2rem;
     width: 25%;
     border-radius: 8px;
     border: black solid 1px;
   }
   #login-head{
-    font-family: 'Times New Roman', Times, serif;
-color: red;
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    font-family: 'Salsa', cursive;
 text-align: center;
   }
   #btn{
     margin-top: 20px;
-    width: 5rem;
+    width: 7rem;
     background-color: #000080;
     color: white;
     border-radius: 5px;
     height: 2rem;
 font-family: 'Courier New', Courier, monospace;  }
 
-
+#message{
+  color:red;
+}
 /* footer */
 footer{
   background-color: rgb(219, 12, 12);

@@ -11,7 +11,7 @@
 
     
       <nav>
-        <a href="index">Home</a>
+        <a href="/index">Home</a>
         <a href="#about">About</a>
         <a href="#service">Services</a>
         <a href="#">Contact</a>
@@ -19,19 +19,19 @@
       </nav>
     <h1 id="login-head">Admin Login </h1>
 
-    <form action="login" method="POST" class="login-form">
+    <form action="" method="POST" class="login-form">
       {% csrf_token %}
 
     <label for="">Username</label>
-    <input type="text" name="username" id="username" > <br>
+    <input type="text" name="username" id="username" required > <br>
     <div>
     <label for="">Password</label>
-    <input type="password" name="password" id="pass"> <br>
+    <input type="password" name="password" id="pass" required> <br>
 
     <input type="submit" id="btn" value="login">
 
     {% for message in messages %}
-    <h3>{{ message}}</h3>
+    <h3 id="message">{{ message}}</h3>
     {% endfor%}
 </div>
 </form>
