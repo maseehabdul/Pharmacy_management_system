@@ -18,13 +18,27 @@ def login(request):
        
        if user is not None:
            auth.login(request,user)
-           return redirect('/')
+           return redirect('dashboard')
        else:
            messages.info(request,'Username or password is invalid!!')
            return redirect("login")
     else:
         return render(request,'login.html')
+    
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+        
 
+def dashboard(request):
+    if request.user.is_authenticated:
+       return render(request,'dashboard.html')
+    else:
+        return redirect(login)
+    
+
+
+    
      
 
 
