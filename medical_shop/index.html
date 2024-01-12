@@ -24,7 +24,15 @@
         <li><a href="#about">About</a></li>
         <li><a href="#service">Services</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="login">Login</a></li>
+        {% if user.is_authenticated %}
+        <li class="logout">
+            <a href="logout">Logout</a>
+        </li>
+        {% else %}
+        <li class="logout">
+            <a href="login">Login</a>
+        </li>
+        {% endif %}
     </ul>
 </nav>
 
@@ -42,7 +50,6 @@
 <p>Community-based pharmacists' responsibilities include: checking and dispensing of prescription drugs, providing advice on drug selection and usage to doctors and other health professionals and counseling patients in health promotion, disease prevention and the proper use of medicines.[4]
 
   In most countries regulations govern how dispensaries may operate, with specific requirements for storage conditions, equipment and record keeping.</p>
-
 
  </div>
 
