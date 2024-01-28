@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
-from requests import request
 from django.http import HttpResponse
+from .models import medicine
 
 
 
@@ -35,6 +35,14 @@ def dashboard(request):
        return render(request,'dashboard.html')
     else:
         return redirect(login)
+    
+def add_medicine(request):
+    return render(request,'add_medicine.html')
+
+def view_medicine(request):
+    medicines =medicine.objects.all()
+    context = {'medicine':medicines}
+    return render(request,'view_medicine.html',context)
     
 
 

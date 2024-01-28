@@ -1,0 +1,10 @@
+{% extends 'dashboard.html' %}
+
+
+{% block content %}
+{%  for x in context %}
+{{x.name}}
+
+{% endfor %}
+
+{% endblock content%}
