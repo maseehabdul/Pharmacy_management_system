@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.http import HttpResponse
-from .models import medicine
+from .models import medicines
 
 
 
@@ -40,9 +40,15 @@ def add_medicine(request):
     return render(request,'add_medicine.html')
 
 def view_medicine(request):
-    medicines =medicine.objects.all()
-    context = {'medicine':medicines}
-    return render(request,'view_medicine.html',context)
+    if request.user.is_authenticated:
+        medicine = medicines.objects.all()
+        
+        return render(request,'view_medicine.html',context=medicine)
+    else:
+        return redirect('login')
+
+   
+        
     
 
 
