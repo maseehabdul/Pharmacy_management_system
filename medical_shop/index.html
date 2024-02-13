@@ -20,7 +20,7 @@
   <nav>
     <span class="logo">Pharmacy shop management system</span>
     <ul>
-        <li><a href="index">Home</a></li>
+        <li><a href="{% url 'index'%}">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#service">Services</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -28,9 +28,10 @@
         <li class="logout">
             <a href="logout">Logout</a>
         </li>
+        <li><a href="{% url 'dashboard '%}"><i class="fa-solid fa-user"></i></a></li>
         {% else %}
         <li class="logout">
-            <a href="login">Login</a>
+            <a href="{% url 'login'%}">Login</a>
         </li>
         {% endif %}
     </ul>
