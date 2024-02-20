@@ -10,6 +10,9 @@ urlpatterns=[
        path('dashboard',views.dashboard,name='dashboard'),
        path('logout',views.logout,name='logout'),
        path('add_medicine',views.add_medicine,name='add_medicine'),
-       path('view_medicine',views.view_medicine,name='view_medicine')
+        path('view_medicine',views.view_medicine,name='view_medicine'),
+        path('view_dealer',views.view_dealer,name='view_dealer'),
+       path('view_customer',views.view_customer,name='view_customer'),
+        path('view_purchase',views.view_purchase,name='view_purchase'),
     
 ]

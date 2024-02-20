@@ -218,3 +218,25 @@ td a, td button {
   padding: 6px;
  
 }
+#del{
+text-decoration: none;
+background-color: red;
+border-radius: 5px;
+padding: 6px;
+color: hsl(0, 0%, 0%);
+border: 2px solid black;
+
+}
+#del:hover{
+  color: rgb(255, 255, 255);
+}
+#edi{
+  background-color: hwb(211 5% 0%);
+width: 50px;
+height: 30px;
+  border-radius: 4px;
+  
+}
+#edi:hover{
+  color: white;
+}

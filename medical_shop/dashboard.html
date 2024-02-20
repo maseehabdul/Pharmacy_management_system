@@ -25,7 +25,7 @@
                 <a href="#">Dealer Management</a>
                 <div class="dropdown-content">
                     <a href="#">Add Dealer</a>
-                    <a href="#">View Dealer</a>
+                    <a href="{% url 'view_dealer' %}">View Dealer</a>
                 </div>
             </li>
             <li class="dropdown"><a href="#">Medicine Management</a>
@@ -38,14 +38,14 @@
 
                 <div class="dropdown-content">
                     <a href="#">Add customer</a>
-                    <a href="#">View customer</a>
+                    <a href="{% url 'view_customer' %}">View customer</a>
                 </div>
             </li>
         
             <li class="dropdown"><a href="#">Purchase Management</a>
                 <div class="dropdown-content">
                     <a href="#">Add purchase</a>
-                    <a href="#">View purchase</a>
+                    <a href="{% url 'view_purchase' %}">View purchase</a>
                 </div>
             </li>
             {% if user.is_authenticated %}

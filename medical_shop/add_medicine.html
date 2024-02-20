@@ -1,7 +1,21 @@
-{% extends 'dashboard.html'%}
+
+{% extends 'dashboard.html' %}
+{% block head %}
+{% endblock %}
+
+{% block body%}
+
+<form method="POST">
+
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="button" value="submit" />
+
+</form>
 
 
-{% block content%}
-
-
-{% endblock content%}
+            
+<!-- Add more rows as needed -->
+</tbody>
+</table>
+{% endblock %}

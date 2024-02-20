@@ -8,21 +8,22 @@
             <tr>
                 <th>id</th>
                 <th>Name</th>
-                <th>Company</th>
+                <th>delaer name</th>
                 <th>Cost</th>
-                <th>Type</th>
-                <th>Action</th>
+                <th>Stock</th>
+                <th>Description</th>
             </tr>
         </thead>
         <tbody>
     {% for i in dealer%}
             <tr>
                 <td>{{i.id}}</td>
-                <td>{{i.name}}</td>
-                <td>{{i.company}}</td>
+                <td>{{i.med_name}}</td>
+                <td>{{i.dealer_nam}}</td>
                 <td>{{i.cost}}</td>
-                <td>{{i.type}}</td>
-                <td id="action"><a href="">add</a><a href="">delete</a><button>Edit</button></td>
+                <td>{{i.stock}}</td>
+                <td>{{i.description}}</td>
+                <td id="action"><button id="edi">Edit</button><button id="del">Delete</button></td>
             </tr>
     {% endfor %}
             
