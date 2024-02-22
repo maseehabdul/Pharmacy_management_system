@@ -1,16 +1,18 @@
+from django import forms
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
 
+
 # Create your models here.
 class medicine(models.Model):
-    id=models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length =20)
     company = models.CharField(max_length =20)
     cost = models.IntegerField()
     type = models.CharField(max_length =20)
 class customer(models.Model):
-     id =models.AutoField(primary_key=True)
+     id = models.AutoField(primary_key=True)
      cus_name = models.CharField(max_length =20)
      address = models.CharField(max_length =20)
      phone_no = PhoneNumberField(null=False, blank=False, unique=True)
@@ -23,7 +25,7 @@ class purchase(models.Model):
       price = models.IntegerField()
       quantity = models.IntegerField()  
 class dealer(models.Model):
-    id =models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     med_name = models.CharField(max_length =20)
     dealer_nam = models.CharField(max_length =20)
     cost = models.IntegerField()

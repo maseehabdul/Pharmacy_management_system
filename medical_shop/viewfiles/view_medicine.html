@@ -8,29 +8,28 @@
             <tr>
                 <th>id</th>
                 <th>Name</th>
-                <th>delaer name</th>
+                <th>Company</th>
                 <th>Cost</th>
-                <th>Stock</th>
-                <th>Description</th>
+                <th>Type</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-    {% for i in dealer%}
+       {% for i in medicine %}
             <tr>
                 <td>{{i.id}}</td>
-                <td>{{i.med_name}}</td>
-                <td>{{i.dealer_nam}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.company}}</td>
                 <td>{{i.cost}}</td>
-                <td>{{i.stock}}</td>
-                <td>{{i.description}}</td>
-                <td id="action"><button id="edi">Edit</button><button id="del">Delete</button></td>
+                <td>{{i.type}}</td>
+                <td id="action"><a href="" id="edit">Edit</a><button id="del">Delete</button></td>
             </tr>
     {% endfor %}
             
             <!-- Add more rows as needed -->
         </tbody>
     </table>
-{% endblock %}
+    {% endblock %}
 
 
 

@@ -1,0 +1,21 @@
+
+{% extends 'dashboard.html'%}
+{% load static %}
+
+{% block head %}
+{% endblock %}
+
+{% block body%}
+<div class="form-control position-absolute border-0 ">
+
+    <form method="POST"  >
+
+        {% csrf_token%}
+        {{addmedicines.as_p}}
+        
+        <button  type="submit" class="form-btn  b-2 ">submit</button>
+        </form>
+</div>
+
+
+{% endblock %}

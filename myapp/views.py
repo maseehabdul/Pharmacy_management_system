@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
-from django.http import HttpResponse
+from myapp.form import addmedicine
 from .models import medicine,dealer,customer,purchase
+
 
 
 
@@ -37,36 +38,63 @@ def dashboard(request):
     else:
         return redirect(login)
     
+    # add a items function
+    
 def add_medicine(request):
-    addmedicines = createmedicine()
-    return render(request,'add_medicine.html',{'medicnines':addmedicines})
+    addmedicines = addmedicine()
+    if request.method == 'POST':
+        addmedicines = addmedicine(request.POST)
+        if addmedicines.is_valid():
+            addmedicines.save()
+            return redirect('add_medicine')
+    return render(request,'addvalues/add_medicine.html',{'addmedicines':addmedicines})
+
+
+
+# update values 
+def update_medicine(request,id):
+    medicines = medicine.objects.get(id=id)
+    # addmedicines = addmedicine(instance=medicine)
+
+    return render(request,'addvalues/add_medicine.html',{'medicines':medicines})
+
+
+    
+
+
+
+#view a items functions
 
 def view_medicine(request):
     if request.user.is_authenticated:
         medicines = medicine.objects.all()
-        return render(request,'view_medicine.html',{"medicine": medicines})
+        return render(request,'viewfiles/view_medicine.html',{"medicine": medicines})
     else:
         return redirect('login')
     
 def view_dealer(request):
     if request.user.is_authenticated:
         dealers = dealer.objects.all()
-        return render(request,'view_dealer.html',{"dealer": dealers})
+        return render(request,'viewfiles/view_dealer.html',{"dealer": dealers})
     else:
         return redirect('login')
 def view_customer(request):
     if request.user.is_authenticated:
         customers = customer.objects.all()
-        return render(request,'view_customer.html',{"customers": customers})
+        return render(request,'viewfiles/view_customer.html',{"customer": customers})
     else:
         return redirect('login')
     
 def view_purchase(request):
     if request.user.is_authenticated:
         purchases = purchase.objects.all()
-        return render(request,'view_purchase.html',{"purchases": purchase})
+        return render(request,'viewfiles/view_purchase.html',{"purchases": purchases})
     else:
         return redirect('login')
+    
+
+
+
 
    
     

@@ -8,21 +8,22 @@
             <tr>
                 <th>id</th>
                 <th>Name</th>
-                <th>Address</th>
-                <th>Phone no</th>
-                <th>Email</th>
-            
+                <th>delaer name</th>
+                <th>Cost</th>
+                <th>Stock</th>
+                <th>Description</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-    {% for i in customer%}
+    {% for i in dealer%}
             <tr>
                 <td>{{i.id}}</td>
-                <td>{{i.cus_name}}</td>
-                <td>{{i.address}}</td>
-                <td>{{i.phone_no}}</td>
-                <td>{{i.email}}</td>
-      
+                <td>{{i.med_name}}</td>
+                <td>{{i.dealer_nam}}</td>
+                <td>{{i.cost}}</td>
+                <td>{{i.stock}}</td>
+                <td>{{i.description}}</td>
                 <td id="action"><button id="edi">Edit</button><button id="del">Delete</button></td>
             </tr>
     {% endfor %}
