@@ -52,11 +52,10 @@ def add_medicine(request):
 
 
 # update values 
-def update_medicine(request,id):
-    medicines = medicine.objects.get(id=id)
+def update_medicine(request, id):
+    medicines = medicine.objects.all().filter(id=id)
     # addmedicines = addmedicine(instance=medicine)
-
-    return render(request,'addvalues/add_medicine.html',{'medicines':medicines})
+    return render(request,'updatefiles/update_medicine.html', {'medicines':medicines,})
 
 
     

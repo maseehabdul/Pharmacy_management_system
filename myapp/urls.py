@@ -14,5 +14,5 @@ urlpatterns=[
         path('view_dealer',views.view_dealer,name='view_dealer'),
        path('view_customer',views.view_customer,name='view_customer'),
         path('view_purchase',views.view_purchase,name='view_purchase'),
-       path('update_medicine/<int:id>',views.update_medicine),
+       path('update_medicine/<int:id>',views.update_medicine, name='update_medicine'),
 ]
