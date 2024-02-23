@@ -1,6 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Roboto:ital,wght@0,100;0,300;1,100&family=Salsa&display=swap');
 
+
+:root,
+[data-bs-theme=light] {
+ --edit-green:green;
+
+}
 html{
   scroll-behavior: smooth;
 }
@@ -218,31 +224,19 @@ td a, td button {
   padding: 6px;
  
 }
-#del{
-text-decoration: none;
-background-color: red;
-border-radius: 5px;
-padding: 6px;
-color: hsl(0, 0%, 0%);
-border: 2px solid black;
 
-}
 #del:hover{
   color: rgb(255, 255, 255);
 }
-#edi{
-  background-color: hwb(211 5% 0%);
-width: 50px;
-height: 30px;
-  border-radius: 4px;
-  
-}
+
 #edi:hover{
   color: white;
 }
 
 /* form style */
 
-.form-btn{
-  padding: 3px;
+#med-head{
+  background-color: #000080;
+  color: white;
+  width: 50%;
 }

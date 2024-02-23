@@ -22,7 +22,7 @@
                 <td>{{i.company}}</td>
                 <td>{{i.cost}}</td>
                 <td>{{i.type}}</td>
-                <td id="action"><a href="{% url 'update_medicine' i.id %}" id="edit">Edit</a><button id="del">Delete</button></td>
+                <td id="action"><a href="{% url 'update_medicine' i.id %}" class="btn btn-success w-25 border-1" id="edit">Edit</a><a id="del" href="{% url 'delete_med' i.id %}" class="btn btn-outline-danger border" >Delete</a></td>
             </tr>
     {% endfor %}
             

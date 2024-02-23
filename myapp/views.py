@@ -53,12 +53,22 @@ def add_medicine(request):
 
 # update values 
 def update_medicine(request, id):
-    medicines = medicine.objects.all().filter(id=id)
-    # addmedicines = addmedicine(instance=medicine)
-    return render(request,'updatefiles/update_medicine.html', {'medicines':medicines,})
-
-
+    medicines = medicine.objects.get(id=id)
     
+    if request.method == 'POST':
+        name = request.POST['name'] 
+        company = request.POST['company'] 
+        cost = request.POST['cost'] 
+        type = request.POST['type'] 
+
+        medicines.name =name
+        medicines.company =company
+        medicines.cost = cost
+        medicines.type= type 
+        medicines.save()
+        return redirect('/view_medicine')
+    return render(request,'updatefiles/update_medicine.html', {'medicines':medicines})
+
 
 
 
@@ -91,6 +101,11 @@ def view_purchase(request):
     else:
         return redirect('login')
     
+def delete_med(request,id):
+        medicines = medicine.objects.get(id=id)
+        medicines.delete()
+        return redirect('/view_medicine')
+
 
 
 

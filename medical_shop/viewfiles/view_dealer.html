@@ -3,6 +3,10 @@
 {% endblock %}
 
 {% block body%}
+
+<div class="search  justify-content-center d-flex w-100">
+    <input type="text">
+</div>
     <table>
         <thead>
             <tr>
@@ -24,7 +28,7 @@
                 <td>{{i.cost}}</td>
                 <td>{{i.stock}}</td>
                 <td>{{i.description}}</td>
-                <td id="action"><button id="edi">Edit</button><button id="del">Delete</button></td>
+                <td id="action"><button id="edi" class="btn btn-success">Edit</button><button id="del" class="btn btn-danger">Delete</button></td>
             </tr>
     {% endfor %}
             
