@@ -3,6 +3,13 @@
 {% endblock %}
 
 {% block body%}
+<!-- <div class="justify-content-between">
+    <button class="btn btn-primary " id="cusbtn">Add customer</button>
+</div> -->
+<div class="float-end justify-content-between ">
+    <a href="{% url 'add_customer'%}"><button class="btn"" id="cusbtn">Add </button></a>
+</div>
+
     <table>
         <thead>
             <tr>
@@ -22,7 +29,7 @@
                 <td>{{i.address}}</td>
                 <td>{{i.phone_no}}</td>
                 <td>{{i.email}}</td>
-                <td id="action"><button id="edi" class="btn btn-success">Edit</button><button id="del" class="btn btn-danger">Delete</button></td>
+                <td id="action"><a href="{% url 'update_customer' i.id %}" class="btn btn-success w-25 border-1" id="edit">Edit</a><a id="del" href="{% url 'delete_med' i.id %}" class="btn btn-outline-danger border" >Delete</a></td>
             </tr>
     {% endfor %}
             

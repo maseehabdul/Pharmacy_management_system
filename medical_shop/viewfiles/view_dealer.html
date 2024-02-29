@@ -3,10 +3,10 @@
 {% endblock %}
 
 {% block body%}
-
-<div class="search  justify-content-center d-flex w-100">
-    <input type="text">
+<div class="float-end justify-content-between ">
+  <a href="{% url 'add_dealer'%}">  <button class="btn" id="cusbtn">Add </button></a>
 </div>
+
     <table>
         <thead>
             <tr>
@@ -20,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-    {% for i in dealer%}
+    {% for i in dealers %}
             <tr>
                 <td>{{i.id}}</td>
                 <td>{{i.med_name}}</td>
@@ -28,7 +28,7 @@
                 <td>{{i.cost}}</td>
                 <td>{{i.stock}}</td>
                 <td>{{i.description}}</td>
-                <td id="action"><button id="edi" class="btn btn-success">Edit</button><button id="del" class="btn btn-danger">Delete</button></td>
+                <td id="action"><a href="{% url 'update_dealer' i.id %}" class="btn btn-success w-25 border-1" id="edit">Edit</a><a id="del" href="{% url 'delete_med' i.id %}" class="btn btn-outline-danger border" >Delete</a></td>
             </tr>
     {% endfor %}
             

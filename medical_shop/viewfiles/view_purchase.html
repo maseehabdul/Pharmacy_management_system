@@ -3,28 +3,29 @@
 {% endblock %}
 
 {% block body%}
+
+<div class="float-end justify-content-between ">
+   <a href="{% url 'add_purchase'%}"><button class="btn" type="submit"  id="cusbtn">Add </button></a> 
+</div>
     <table>
         <thead>
             <tr>
                 <th>id</th>
                 <th>Product Name</th>
-                <th>Customer name</th>
-                <th>Phone no</th>
                 <th>price</th>
                 <th>Quantity</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-    {% for i in purchase %}
+    {% for i in purchases %}
             <tr>
                 <td>{{i.id}}</td>
                 <td>{{i.product_name}}</td>
-                <td>{{i.cus_name}}</td>
-                <td>{{i.phone_no}}</td>
+            
                 <td>{{i.price}}</td>
                 <td>{{i.quantity}}</td>
-      
-                <td id="action"><button id="edi">Edit</button><button id="del">Delete</button></td>
+                <td id="action"><a href="{% url 'update_purchase' i.id %}" class="btn btn-success w-25 border-1" id="edit">Edit</a><a id="del" href="{% url 'delete_med' i.id %}" class="btn btn-outline-danger border" >Delete</a></td>
             </tr>
     {% endfor %}
             

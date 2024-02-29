@@ -51,6 +51,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# settings.py
+LOGIN_URL = 'login/'
+
 ROOT_URLCONF = 'medicalsystem.urls'
 
 TEMPLATES = [

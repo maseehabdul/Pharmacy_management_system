@@ -240,3 +240,31 @@ td a, td button {
   color: white;
   width: 50%;
 }
+
+/* search items */
+#search{
+  max-width: 25%;
+  border: #000080 1px solid;
+}
+#searchicon{
+  margin-top: 30px;
+  padding: 5px;
+  font-size: 20px;
+}
+.btn{
+  margin-top: 25px;
+  margin-left: 10px;
+}
+#cusbtn{
+ position: absolute;
+width: 10%;
+ right: 0;
+ top:0;
+ margin-top: 80px;
+ background-color:#023047;
+ color: white;
+ 
+}
+#cusbtn:hover{
+  color: #ade8f4;
+}
