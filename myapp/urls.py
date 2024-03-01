@@ -22,5 +22,8 @@ urlpatterns=[
     path('update_dealer/<str:id>',views.update_dealer, name='update_dealer'),
     path('update_purchase/<str:id>',views.update_purchase, name='update_purchase'),
     path('delete_med/<str:id>',views.delete_med, name='delete_med'),
+    path('delete_purchase/<str:id>',views.delete_purchase, name='delete_purchase'),
+     path('delete_customer/<str:id>',views.delete_customer, name='delete_customer'),
+      path('delete_dealer/<str:id>',views.delete_dealer, name='delete_dealer'),
    
 ]

@@ -28,7 +28,7 @@
                 <td>{{i.cost}}</td>
                 <td>{{i.stock}}</td>
                 <td>{{i.description}}</td>
-                <td id="action"><a href="{% url 'update_dealer' i.id %}" class="btn btn-success w-25 border-1" id="edit">Edit</a><a id="del" href="{% url 'delete_med' i.id %}" class="btn btn-outline-danger border" >Delete</a></td>
+                <td id="action"><a href="{% url 'update_dealer' i.id %}" class="btn btn-success w-25 border-1" id="edit">Edit</a><a id="del" href="{% url 'delete_dealer' i.id %}" class="btn btn-outline-danger border" >Delete</a></td>
             </tr>
     {% endfor %}
             

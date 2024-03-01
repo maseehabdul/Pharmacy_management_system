@@ -13,11 +13,11 @@ class medicine(models.Model):
     type = models.CharField(max_length =20)
 
 class customer(models.Model):
-     id = models.AutoField(primary_key=True)
-     cus_name = models.CharField(max_length =20)
-     address = models.CharField(max_length =20)
-     phone_no = PhoneNumberField(null=False, blank=False, unique=True)
-     email = models.EmailField(max_length =254)
+      id = models.AutoField(primary_key=True)
+      cus_name = models.CharField(max_length = 30)
+      address = models.CharField(max_length=20)
+      phone_no = PhoneNumberField(null=False, blank=False, unique=True)
+      email = models.EmailField(max_length =254)
 
 class purchase(models.Model):
       id = models.AutoField(primary_key=True)

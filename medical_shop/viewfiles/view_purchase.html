@@ -25,7 +25,7 @@
             
                 <td>{{i.price}}</td>
                 <td>{{i.quantity}}</td>
-                <td id="action"><a href="{% url 'update_purchase' i.id %}" class="btn btn-success w-25 border-1" id="edit">Edit</a><a id="del" href="{% url 'delete_med' i.id %}" class="btn btn-outline-danger border" >Delete</a></td>
+                <td id="action"><a href="{% url 'update_purchase' i.id %}" class="btn btn-success w-25 border-1" id="edit">Edit</a><a id="del" href="{% url 'delete_purchase' i.id %}" class="btn btn-outline-danger border" >Delete</a></td>
             </tr>
     {% endfor %}
             

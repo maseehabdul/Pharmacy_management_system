@@ -177,7 +177,7 @@ def view_dealer(request):
 def view_customer(request):
     if 'search' in request.GET:
         search = request.GET['search']
-        customers = customer.objects.filter(dealer_nam__icontains = search)
+        customers = customer.objects.filter(cus_name__icontains = search)
     else:
         customers = customer.objects.all()
     return render(request,'viewfiles/view_customer.html',{"customer": customers})
@@ -197,6 +197,19 @@ def delete_med(request,id):
         medicines = medicine.objects.get(id=id)
         medicines.delete()
         return redirect('/view_medicine')
+@login_required  
+def delete_purchase(request,id):
+        purchases = purchase.objects.get(id=id)
+        purchases.delete()
+        return redirect('/view_purchase')
+def delete_customer(request,id):
+        customers = customer.objects.get(id=id)
+        customers.delete()
+        return redirect('/view_customer')
+def delete_dealer(request,id):
+        dealers = dealer.objects.get(id=id)
+        dealers.delete()
+        return redirect('/view_dealer')
 
 
 
