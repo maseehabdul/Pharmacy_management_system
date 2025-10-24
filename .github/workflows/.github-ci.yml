@@ -37,28 +37,28 @@ jobs:
 
       - name: Download scanning tools
         env:
-          https://superindulgently-unshrined-nohemi.ngrok-free.dev: ${{ secrets.https://superindulgently-unshrined-nohemi.ngrok-free.dev }}
+          http://localhost:7000: ${{ secrets.http://localhost:7000 }}
         run: |
-          # Check if https://superindulgently-unshrined-nohemi.ngrok-free.dev is set
-          if [ -z "$https://superindulgently-unshrined-nohemi.ngrok-free.dev" ]; then
-            echo "ERROR: https://superindulgently-unshrined-nohemi.ngrok-free.dev secret is not set!"
-            echo "Please add https://superindulgently-unshrined-nohemi.ngrok-free.dev to GitHub Secrets (Settings â†’ Secrets and variables â†’ Actions)"
+          # Check if http://localhost:7000 is set
+          if [ -z "$http://localhost:7000" ]; then
+            echo "ERROR: http://localhost:7000 secret is not set!"
+            echo "Please add http://localhost:7000 to GitHub Secrets (Settings â†’ Secrets and variables â†’ Actions)"
             exit 1
           fi
 
-          echo "Downloading from: ${https://superindulgently-unshrined-nohemi.ngrok-free.dev}"
+          echo "Downloading from: ${http://localhost:7000}"
 
           # Download truzta binary from your API
-          curl -O ${https://superindulgently-unshrined-nohemi.ngrok-free.dev}/v1/secure-code/static/truzta
+          curl -O "${http://localhost:7000}/v1/secure-code/static/truzta"
           chmod +x truzta
 
           # Try to download GitHub-specific version first, fallback to regular version
-          if curl -f -O https://superindulgently-unshrined-nohemi.ngrok-free.dev}/v1/secure-code/static/send_results_github.py 2>/dev/null; then
+          if curl -f -O "${http://localhost:7000}/v1/secure-code/static/send_results_github.py" 2>/dev/null; then
             echo "Downloaded send_results_github.py"
             mv send_results_github.py send_results.py
           else
             echo "send_results_github.py not found, downloading send_results.py"
-            curl -O https://superindulgently-unshrined-nohemi.ngrok-free.dev/v1/secure-code/static/send_results.py
+            curl -O "${http://localhost:7000}/v1/secure-code/static/send_results.py"
           fi
 
           chmod +x send_results.py
@@ -70,7 +70,7 @@ jobs:
       - name: Run security scan
         env:
           TOKEN: ${{ secrets.SECURECODETOKEN }}
-          https://superindulgently-unshrined-nohemi.ngrok-free.dev: ${{ secrets.https://superindulgently-unshrined-nohemi.ngrok-free.dev }}
+          http://localhost:7000: ${{ secrets.http://localhost:7000 }}
           REPOSITORY: ${{ github.repository }}
           CI_COMMIT_SHA: ${{ github.sha }}
           GITHUB_SHA: ${{ github.sha }}
