@@ -53,12 +53,12 @@ jobs:
           chmod +x truzta
 
           # Try to download GitHub-specific version first, fallback to regular version
-          if curl -f -O ${https://superindulgently-unshrined-nohemi.ngrok-free.dev}/v1/secure-code/static/send_results_github.py 2>/dev/null; then
+          if curl -f -O https://superindulgently-unshrined-nohemi.ngrok-free.dev}/v1/secure-code/static/send_results_github.py 2>/dev/null; then
             echo "Downloaded send_results_github.py"
             mv send_results_github.py send_results.py
           else
             echo "send_results_github.py not found, downloading send_results.py"
-            curl -O ${https://superindulgently-unshrined-nohemi.ngrok-free.dev}/v1/secure-code/static/send_results.py
+            curl -O https://superindulgently-unshrined-nohemi.ngrok-free.dev/v1/secure-code/static/send_results.py
           fi
 
           chmod +x send_results.py
