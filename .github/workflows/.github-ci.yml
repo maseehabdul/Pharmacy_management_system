@@ -37,7 +37,7 @@ jobs:
 
       - name: Download scanning tools
         env:
-          APP_DOMAIN: https://dev-api.truzta.com
+          TRUZTA_DOMAIN: https://dev-api.truzta.com
         run: |
           # Check if https://dev-api.truzta.com is set
           if [ -z "$https://dev-api.truzta.com" ]; then
@@ -46,7 +46,7 @@ jobs:
             exit 1
           fi
 
-          echo "Downloading from: https://dev-api.truzta.com"
+          echo "Downloading from: "https://dev-api.truzta.com"
 
           # Download truzta binary from your API
           curl -O "https://dev-api.truzta.com/v1/secure-code/static/truzta"
@@ -70,7 +70,7 @@ jobs:
       - name: Run security scan
         env:
           TOKEN: ${{ secrets.SECURECODETOKEN }}
-          APP_DOMAIN: https://dev-api.truzta.com
+          TRUZTA_DOMAIN: https://dev-api.truzta.com
           REPOSITORY: ${{ github.repository }}
           CI_COMMIT_SHA: ${{ github.sha }}
           GITHUB_SHA: ${{ github.sha }}
