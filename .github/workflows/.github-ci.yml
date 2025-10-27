@@ -37,7 +37,7 @@ jobs:
 
       - name: Download scanning tools
         env:
-          https://dev-api.truzta.com: https://dev-api.truzta.com
+          APP_DOMAIN: https://dev-api.truzta.com
         run: |
           # Check if https://dev-api.truzta.com is set
           if [ -z "$https://dev-api.truzta.com" ]; then
@@ -70,7 +70,7 @@ jobs:
       - name: Run security scan
         env:
           TOKEN: ${{ secrets.SECURECODETOKEN }}
-          https://dev-api.truzta.com: https://dev-api.truzta.com
+          APP-DOMAIN: https://dev-api.truzta.com
           REPOSITORY: ${{ github.repository }}
           CI_COMMIT_SHA: ${{ github.sha }}
           GITHUB_SHA: ${{ github.sha }}
