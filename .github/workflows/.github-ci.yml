@@ -37,28 +37,28 @@ jobs:
 
       - name: Download scanning tools
         env:
-          http://localhost:7000: ${{ secrets.http://localhost:7000 }}
+          TRUZTA_DOMAIN: https://api.truzta.com
         run: |
-          # Check if http://localhost:7000 is set
-          if [ -z "$http://localhost:7000" ]; then
-            echo "ERROR: http://localhost:7000 secret is not set!"
-            echo "Please add http://localhost:7000 to GitHub Secrets (Settings â†’ Secrets and variables â†’ Actions)"
+          # Check if https://api.truzta.com is set
+          if [ -z "$https://api.truzta.com" ]; then
+            echo "ERROR: https://api.truzta.com secret is not set!"
+            echo "Please add https://api.truzta.com to GitHub Secrets (Settings → Secrets and variables → Actions)"
             exit 1
           fi
 
-          echo "Downloading from: ${http://localhost:7000}"
+          echo "Downloading from: https://api.truzta.com"
 
           # Download truzta binary from your API
-          curl -O "${http://localhost:7000}/v1/secure-code/static/truzta"
+          curl -O "https://api.truzta.com/v1/secure-code/static/truzta"
           chmod +x truzta
 
           # Try to download GitHub-specific version first, fallback to regular version
-          if curl -f -O "${http://localhost:7000}/v1/secure-code/static/send_results_github.py" 2>/dev/null; then
+          if curl -f -O "https://api.truzta.com/v1/secure-code/static/send_results_github.py" 2>/dev/null; then
             echo "Downloaded send_results_github.py"
             mv send_results_github.py send_results.py
           else
             echo "send_results_github.py not found, downloading send_results.py"
-            curl -O "${http://localhost:7000}/v1/secure-code/static/send_results.py"
+            curl -O "https://api.truzta.com/v1/secure-code/static/send_results.py"
           fi
 
           chmod +x send_results.py
@@ -70,7 +70,7 @@ jobs:
       - name: Run security scan
         env:
           TOKEN: ${{ secrets.SECURECODETOKEN }}
-          http://localhost:7000: ${{ secrets.http://localhost:7000 }}
+          TRUZTA_DOMAIN: https://api.truzta.com
           REPOSITORY: ${{ github.repository }}
           CI_COMMIT_SHA: ${{ github.sha }}
           GITHUB_SHA: ${{ github.sha }}
