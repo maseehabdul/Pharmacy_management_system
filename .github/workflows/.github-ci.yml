@@ -66,12 +66,21 @@ jobs:
           # Verify downloads
           ls -la
           echo "Current directory: $(pwd)"
-      - name: Start Docker
+      - name: Upgrade and Start Docker
         run: |
-              sudo systemctl start docker
-              sudo systemctl enable docker
-              docker --version
-              docker info
+          # Remove old version
+          sudo apt-get remove -y docker docker-engine docker.io containerd runc || true
+          
+          # Install latest Docker
+          curl -fsSL https://get.docker.com | sudo sh
+          
+          # Start Docker service
+          sudo systemctl start docker
+          sudo systemctl enable docker
+          
+          # Verify
+          docker --version
+          docker info
 
       - name: Run security scan
         env:
