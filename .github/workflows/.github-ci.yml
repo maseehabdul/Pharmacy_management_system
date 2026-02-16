@@ -16,7 +16,7 @@ env:
 
 jobs:
   sast:
-    runs-on: ubuntu-latest
+    runs-on: python:3.9
 
     steps:
       - name: Checkout code
