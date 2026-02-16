@@ -16,7 +16,7 @@ env:
 
 jobs:
   sast:
-    runs-on: python:3.9
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -66,6 +66,12 @@ jobs:
           # Verify downloads
           ls -la
           echo "Current directory: $(pwd)"
+      - name: Start Docker
+        run: |
+              sudo systemctl start docker
+              sudo systemctl enable docker
+              docker --version
+              docker info
 
       - name: Run security scan
         env:
