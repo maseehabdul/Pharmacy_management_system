@@ -3,10 +3,10 @@ name: Secure Code Review
 on:
   push:
     branches:
-      - '**'
+      - main
   pull_request:
     branches:
-      - '**'
+      - main
 
 env:
   OUTPUT_FILE_1: "tool_output.json"
