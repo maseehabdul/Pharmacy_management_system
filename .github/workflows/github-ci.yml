@@ -37,28 +37,28 @@ jobs:
 
       - name: Download scanning tools
         env:
-          TRUZTA_DOMAIN: https://shield-api.zaincloud.com.sa
+          TRUZTA_DOMAIN: https://demo-api.truzta.com
         run: |
-          # Check if https://shield-api.zaincloud.com.sa is set
-          if [ -z "$https://shield-api.zaincloud.com.sa" ]; then
-            echo "ERROR: https://shield-api.zaincloud.com.sa secret is not set!"
-            echo "Please add https://shield-api.zaincloud.com.sa to GitHub Secrets (Settings → Secrets and variables → Actions)"
+          # Check if https://demo-api.truzta.com is set
+          if [ -z "$https://demo-api.truzta.com" ]; then
+            echo "ERROR: https://demo-api.truzta.com secret is not set!"
+            echo "Please add https://demo-api.truzta.com to GitHub Secrets (Settings → Secrets and variables → Actions)"
             exit 1
           fi
 
-          echo "Downloading from: https://shield-api.zaincloud.com.sa"
+          echo "Downloading from: https://demo-api.truzta.com"
 
           # Download truzta binary from your API
-          curl -O "https://shield-api.zaincloud.com.sa/v1/secure-code/static/truzta"
+          curl -O "https://demo-api.truzta.com/v1/secure-code/static/truzta"
           chmod +x truzta
 
           # Try to download GitHub-specific version first, fallback to regular version
-          if curl -f -O "https://shield-api.zaincloud.com.sa/v1/secure-code/static/send_results_github.py" 2>/dev/null; then
+          if curl -f -O "https://demo-api.truzta.com/v1/secure-code/static/send_results_github.py" 2>/dev/null; then
             echo "Downloaded send_results_github.py"
             mv send_results_github.py send_results.py
           else
             echo "send_results_github.py not found, downloading send_results.py"
-            curl -O "https://shield-api.zaincloud.com.sa/v1/secure-code/static/send_results.py"
+            curl -O "https://demo-api.truzta.com/v1/secure-code/static/send_results.py"
           fi
 
           chmod +x send_results.py
@@ -70,7 +70,7 @@ jobs:
       - name: Run security scan
         env:
           TOKEN: ${{ secrets.SECURECODETOKEN }}
-          TRUZTA_DOMAIN: https://shield-api.zaincloud.com.sa
+          TRUZTA_DOMAIN: https://demo-api.truzta.com
           REPOSITORY: ${{ github.repository }}
           CI_COMMIT_SHA: ${{ github.sha }}
           GITHUB_SHA: ${{ github.sha }}
