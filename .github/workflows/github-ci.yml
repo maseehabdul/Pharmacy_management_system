@@ -37,7 +37,7 @@ jobs:
 
       - name: Download scanning tools
         env:
-          TRUZTA_DOMAIN: http://localhost:7000
+          TRUZTA_DOMAIN:  https://superindulgently-unshrined-nohemi.ngrok-free.dev
         run: |
 
           echo "Downloading from: http://localhost:7000"
