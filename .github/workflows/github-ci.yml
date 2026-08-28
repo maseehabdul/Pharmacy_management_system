@@ -40,7 +40,7 @@ jobs:
           TRUZTA_DOMAIN:  https://superindulgently-unshrined-nohemi.ngrok-free.dev
         run: |
 
-          echo "Downloading from: http://localhost:7000"
+          echo "Downloading from:  https://superindulgently-unshrined-nohemi.ngrok-free.dev"
 
           # Download truzta binary from your API
           curl -O " https://superindulgently-unshrined-nohemi.ngrok-free.dev/v1/secure-code/static/truzta"
