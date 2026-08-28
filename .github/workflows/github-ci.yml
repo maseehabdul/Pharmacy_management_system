@@ -39,12 +39,6 @@ jobs:
         env:
           TRUZTA_DOMAIN: http://localhost:7000
         run: |
-          # Check if http://localhost:7000 is set
-          if [ -z "$http://localhost:7000" ]; then
-            echo "ERROR: http://localhost:7000 secret is not set!"
-            echo "Please add http://localhost:7000 to GitHub Secrets (Settings â†’ Secrets and variables â†’ Actions)"
-            exit 1
-          fi
 
           echo "Downloading from: http://localhost:7000"
 
